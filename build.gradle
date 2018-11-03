@@ -1,0 +1,41 @@
+buildscript {
+  repositories {
+    jcenter()
+  }
+  dependencies {
+    classpath 'com.github.jengelman.gradle.plugins:shadow:4.0.2'
+  }
+}
+
+apply plugin: 'java'
+apply plugin: 'application'
+apply plugin: 'com.github.johnrengelman.shadow'
+
+mainClassName = 'com.clubobsidian.mixy.Mixy'
+
+repositories {
+    mavenCentral()
+    jcenter()
+}
+
+
+shadowJar {
+   baseName = 'mixy'
+   classifier = null
+   version = null
+}
+
+
+repositories {
+    mavenCentral()
+    jcenter()
+}
+
+// In this section you declare the dependencies for your production and test code
+dependencies {
+    compile 'org.slf4j:slf4j-api:1.7.25'
+    compile 'org.slf4j:slf4j-log4j12:1.7.25'
+    compile 'net.bytebuddy:byte-buddy-dep:1.8.12'
+    compile 'net.bytebuddy:byte-buddy-agent:1.8.12'
+	compile 'com.beust:jcommander:1.72'
+}
