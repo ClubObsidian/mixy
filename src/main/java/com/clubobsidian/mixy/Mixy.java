@@ -25,6 +25,7 @@ import java.net.URL;
 import java.util.jar.JarFile;
 
 import org.apache.log4j.BasicConfigurator;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -137,7 +138,7 @@ public class Mixy {
 							name = name.replace("/", ".");
 							name = name.replace("\\", ".");
 							name = name.replace(".class", "");
-							System.out.println(name);
+							Mixy.getLogger().info("Trying to mixin " + name);
 							try 
 							{
 								Class<?> interceptorClass = this.loader.loadClass(name);
