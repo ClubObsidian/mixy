@@ -13,18 +13,11 @@ apply plugin: 'com.github.johnrengelman.shadow'
 
 mainClassName = 'com.clubobsidian.mixy.Mixy'
 
-repositories {
-    mavenCentral()
-    jcenter()
-}
-
-
 shadowJar {
    baseName = 'mixy'
    classifier = null
    version = null
 }
-
 
 repositories {
     mavenCentral()
